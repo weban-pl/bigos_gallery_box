@@ -17,6 +17,9 @@ After you install BigosGalleryBox and add it to your Gemfile, you need to run th
 
 ```console
 rails generate bigos_gallery_box:install
+rake bigos_gallery_box:install:migrations
+rake db:migrate
+
 ```
 
 
