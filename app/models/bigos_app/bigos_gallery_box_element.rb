@@ -3,7 +3,7 @@ module BigosApp
     has_one :gallery, :dependent => :destroy
     has_many :gallery_images, :through => :gallery
     after_save :add_gallery
-
+    attr_accessible :is_admin_visible, :name, :type, :page_id, :position, :gallery_attributes
     accepts_nested_attributes_for :gallery
 
     scope :is_background, lambda{ where(is_background: true) }
