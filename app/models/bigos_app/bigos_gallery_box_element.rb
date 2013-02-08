@@ -1,7 +1,7 @@
 module BigosApp
   class BigosGalleryBoxElement < PageElement
-    has_one :gallery, :dependent => :destroy
-    has_many :gallery_images, :through => :gallery
+    has_one :gallery, :dependent => :destroy, :class_name => "BigosGalleryBox::Gallery"
+    has_many :gallery_images, :through => :gallery, :class_name => "BigosGalleryBox::GalleryImage"
     after_save :add_gallery
     attr_accessible :is_admin_visible, :name, :type, :page_id, :position, :gallery_attributes
     accepts_nested_attributes_for :gallery
