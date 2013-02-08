@@ -1,4 +1,4 @@
-module BigosApp
+module BigosGalleryBox
   class GalleryImageUploader < CarrierWave::Uploader::Base
 
     include CarrierWave::RMagick
