@@ -1,0 +1,11 @@
+<% g = pe.gallery %>
+<h2><%= g.title %></h2>
+<ul>
+  <% g.gallery_images.each do |gi| %>
+    <li>
+      <h4><%= gi.title unless gi.title.blank? %></h4>
+      <%= link_to (image_tag gi.image.url(:thumb)), gi.href unless gi.href.blank? %>
+      <%= image_tag gi.image.url(:thumb) if gi.href.blank? %>
+    </li>
+  <% end %>
+</ul>

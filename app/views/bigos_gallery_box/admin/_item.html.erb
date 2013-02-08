@@ -1,0 +1,11 @@
+<%= pe.simple_fields_for :gallery do |g|%>
+    <%= g.input :title  %>
+    <%= g.input :is_background, :label => "Use as background" %>
+    <div id="gallery_images">
+      <%= g.simple_fields_for :gallery_images do |gi|%>
+          <%= render partial: "/bigos_gallery_box/admin/gallery_images/form", locals: {f:gi, hide_link: true} %>
+      <% end %>
+      <%= link_to_add_association 'Add new image', g, :gallery_images, :partial => "/bigos_gallery_box/admin/gallery_images/form", "data-association-insertion-method" => "after", :class => "small button" %>
+    </div>
+<% end %>
+

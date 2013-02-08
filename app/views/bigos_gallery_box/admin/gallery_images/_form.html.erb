@@ -1,0 +1,9 @@
+<div class="nested-fields">
+  <%= field_set_tag (f.object.title || "Image") do %>
+    <%= f.input :title  %>
+    <%= f.input :href  %>
+    <%= f.input :image, as: "file", :hint => f.object.try(:image).try(:blank?) ? "" : f.template.image_tag(f.object.try(:image).try(:url, :thumb))  %>
+    <% hide_link ||= false %>
+    <%= link_to_remove_association "Remove image", f, :class => "alert small button"  unless hide_link %>
+  <% end %>
+</div>

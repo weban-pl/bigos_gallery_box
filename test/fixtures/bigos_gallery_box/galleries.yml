@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bigos_gallery_element_id: 1
+  title: MyString
+  is_background: false
+
+two:
+  bigos_gallery_element_id: 1
+  title: MyString
+  is_background: false
