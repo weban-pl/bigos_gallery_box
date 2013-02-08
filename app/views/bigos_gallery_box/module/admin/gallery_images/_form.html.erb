@@ -4,6 +4,10 @@
     <%= f.input :href  %>
     <%= f.input :image, as: "file", :hint => f.object.try(:image).try(:blank?) ? "" : f.template.image_tag(f.object.try(:image).try(:url, :thumb))  %>
     <% hide_link ||= false %>
-    <%= link_to_remove_association "Remove image", f, :class => "alert small button"  unless hide_link %>
+    <% if hide_link %>
+      <%= link_to "Remove image", bigos_gallery_box.admin_gallery_image_path(f.object), :method => :delete, :class => "alert small button", :confirm => "Are you sure?" %>
+    <% else %>
+      <%= link_to_remove_association "Remove image", f, :class => "alert small button"  %>
+    <% end %>
   <% end %>
 </div>
