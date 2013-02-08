@@ -3,7 +3,7 @@ class CreateBigosGalleryBoxGalleryImages < ActiveRecord::Migration
     create_table :bigos_gallery_box_gallery_images do |t|
       t.integer :gallery_id
       t.string :title
-      t.string :gref
+      t.string :href
       t.string :image
       t.integer :position
 
